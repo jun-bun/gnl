@@ -30,13 +30,13 @@ char	*ft_read_file(int fd, char buff[MAX_FILEDES][BUFF_SIZE])
 
 int		get_next_line(const int fd, char **line)
 {
-	static char		buff[MAX_FILEDES][BUFF_SIZE];
-	t_list	*l_content;
-	char	*ptr_newline;
-	char	*content;
-	size_t	bytes_read;
-	size_t	total_bytes_read;
-	size_t	next_n;		
+	static 	t_list	*buff;
+	t_list			*l_content;
+	char			*ptr_newline;
+	char			*content;
+	size_t			bytes_read;
+	size_t			total_bytes_read;
+	size_t			next_n;		
 
 	l_content = NULL;
 	total_bytes_read = 0;
@@ -64,6 +64,10 @@ int		get_next_line(const int fd, char **line)
 		}
 		if (ptr_newline)
 		{
+				
+
+
+
 			ft_strcpy(buff[fd], ptr_newline + 1);
 			ft_putendl("in the Buff");
 			ft_putendl(buff[fd]);

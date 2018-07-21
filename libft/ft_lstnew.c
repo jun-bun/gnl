@@ -6,7 +6,7 @@
 /*   By: juwong <juwong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/25 19:36:00 by juwong            #+#    #+#             */
-/*   Updated: 2018/07/13 20:11:41 by juwong           ###   ########.fr       */
+/*   Updated: 2018/07/20 20:18:03 by juwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,6 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	{
 		list->content = NULL;
 		list->content_size = 0;
-		list->next = NULL;
-		return (list);
 	}
 	if (!(list->content = malloc(content_size)))
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: juwong <juwong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/21 19:11:25 by juwong            #+#    #+#             */
-/*   Updated: 2018/06/27 02:57:41 by juwong           ###   ########.fr       */
+/*   Updated: 2018/07/20 00:21:34 by juwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@ char	*ft_strnew(size_t size)
 {
 	char	*str;
 
-	str = ft_memalloc(size + 1);
+	str = (char*)malloc(sizeof(char) * (size + 1));
 	return (str ? ft_memset(str, '\0', size + 1) : NULL);
 }

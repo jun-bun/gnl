@@ -6,7 +6,7 @@
 #    By: juwong <juwong@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/20 11:00:07 by juwong            #+#    #+#              #
-#    Updated: 2018/07/14 17:23:42 by juwong           ###   ########.fr        #
+#    Updated: 2018/07/18 22:09:37 by juwong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -87,10 +87,9 @@ SRC = ft_putchar.c \
 all: $(NAME)  
 
 $(NAME): $(OBJECT)
+	@gcc $(CFLAGS) $(SRC)
 	ar rc $(NAME) $(OBJECT)
 	ranlib $(NAME)
-$(OBJECT): $(SRC)
-	@gcc $(CFLAGS) $(SRC)
 
 clean: 
 	rm -f $(OBJECT)

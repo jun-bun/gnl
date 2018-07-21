@@ -1,0 +1,17 @@
+#include "get_next_line.h"
+#include <fcntl.h>
+#include <stdio.h>
+
+int		main(int argc, char **argv)
+{
+	char *line;
+	int		fd = 1;
+
+	while (fd < argc)
+	{
+		int fd2 = open(argv[1], O_RDONLY);
+		get_next_line(fd2, &line);
+		printf("%s", line);
+		fd++;
+	}
+}

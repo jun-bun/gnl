@@ -1,0 +1,57 @@
+#include "get_next_line.h"
+#include <fcntl.h>
+
+int		main(int argc, char **argv)
+{
+	int		fd1;
+	int		fd2;
+	int		fd3;
+	char	*line;
+
+	if (argc == 1)
+		fd1 = 0;
+	else if (argc == 2)
+	{
+		fd1 = open(argv[1], O_RDONLY);
+		while (get_next_line(fd1, &line) == 1)
+		{
+			ft_putendl(line);
+			ft_putendl("----");
+			free(line);
+		}
+	}
+	else if (argc == 4)
+	{	
+		fd1 = open(argv[1], O_RDONLY);
+		fd2 = open(argv[2], O_RDONLY);
+		fd3 = open(argv[3], O_RDONLY);
+		while (1)
+		{	
+			if (get_next_line(fd1, &line) != 1)
+				break;
+			ft_putendl(line);
+			free(line);
+			if (get_next_line(fd2, &line) != 1)
+				break;
+			ft_putendl(line);
+			free(line);
+			if (get_next_line(fd3, &line) != 1)
+				break;
+			ft_putendl(line);
+			free(line);
+		}
+	}
+	else
+		return (2);
+
+	if (argc == 2)
+		close(fd1);
+
+	if (argc == 4)
+	{
+		close(fd1);
+		close(fd2);
+		close(fd3);
+	}	
+	sleep(15);
+}
